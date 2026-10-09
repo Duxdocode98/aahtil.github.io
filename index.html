@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <style>
+        @font-face {
+            font-family: 'comfortaa';
+            src: url(/font/Comfortaa-Bold.ttf)  format('truetype');
+        }
+        
         body
         {
             background-image: url(img/fundo.png);
@@ -9,18 +14,143 @@
             background-repeat: repeat;
             background-position:top-left;
             background-attachment: scroll;
-            background: size 4px;
-           
+            background-repeat: repeat;
+            position: relative;
+            min-height: 100vh;
         }
+        .tit_jogar
+        {
+            position: absolute;
+            top: 1400px;
+            left: 100px;
+            font-family: 'comfortaa' , sans-serif;
+            color: #ffffff;
+            font-size: 80px;
+            text-shadow:
+            2px -1px 0 hotpink,
+            2px 1px 0 hotpink,
+            -2px 1px 0 hotpink,
+            -2px -1px 0 hotpink;
+        }
+        .tit_contato
+        {
+            position: absolute;
+            top: 2400px;
+            left: 100px;
+            font-family: 'comfortaa' , sans-serif;
+            color: #ffffff;
+            font-size: 80px;
+            text-shadow:
+            2px -1px 0 hotpink,
+            2px 1px 0 hotpink,
+            -2px 1px 0 hotpink,
+            -2px -1px 0 hotpink;
+        }
+        .tit_tradu
+        {
+            position: absolute;
+            top: 1700px;
+            left: 100px;
+            font-family: 'comfortaa' , sans-serif;
+            color: #ffffff;
+            font-size: 80px;
+            text-shadow:
+            2px -1px 0 hotpink,
+            2px 1px 0 hotpink,
+            -2px 1px 0 hotpink,
+            -2px -1px 0 hotpink;
+        }
+        .balao
+        {
+            position: absolute;
+            top: 250px;
+            left: 400px;
+            height: 250px;
+            width: 200;
+
+        }
+        .chuy_gran
+        {
+            position: absolute;
+            top : 250px;
+            left: 20px;
+            height: 800px;
+            width: 500px;
+        }
+        .texto
+        {
+            position: absolute;
+            top: 275px;
+            left: 420px;
+            font-family: 'comfortaa' , sans-serif;
+            color: #ffffff;
+            font-size: 25px;
+            text-shadow:
+            1px -0.5px 0 #53366b,
+            1px 0.5px 0 #53366b,
+            -1px 0.5px 0 #53366b,
+            -1px -0.5px 0 #53366b;
+            z-index: 1;
+
+        }
+        .fofo
+        {
+            position: absolute;
+            width: 150px;
+            height: px;
+            left: 400px;
+            top: 700px;
+            border-radius: 25px;
+            border:7px ridge #f3a2ee;
+            box-shadow: 8px 8px 10px #25182F  ;
+        }
+        .titulo
+        {   
+            position: absolute;
+            top: 20px;
+            left: 100px;
+            font-family: 'comfortaa' , sans-serif;
+            color: #ffffff;
+            font-size: 80px;
+            text-shadow:
+            2px -1px 0 hotpink,
+            2px 1px 0 hotpink,
+            -2px 1px 0 hotpink,
+            -2px -1px 0 hotpink;
+        }
+        .botos
+        {
+            width: 100px;
+            height: 100px;
+            transition: transform 0.2s; 
+            position: absolute;
+            top: 1000px;
+            left: 270px;
+            
+        }
+        .botos:active
+        {
+            transform: scale(0.4);
+        }
+        
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dica</title>
 </head>
 <body>
-    <p> pinto penis</p>
-    <p> pinto penis</p>
-    <p> pinto penis</p>
+    <h3 class="texto">minhas maiores <br> fãs jogam Touhou 8 <br> ate a fase 6B</s>
+    </h3>
+    <img class="fofo" src="/img/chuuya-soukoku.gif"> <img/>
+    <img class="balao " src="/img/balaochuya.png"><img/>
+    <h1 class="titulo">Você sabia? </h1>
+    <img class="chuy_gran" src="/img/s-l1600-339311506.png"> <img/>
+    <h1 class="tit_jogar"> Instalar </h1>
+    <h4 class="tit_jogar"style= " scale: 0.3 ; left: 80px;">Instalar touhou 8 no seu computador </h4>
+    <h1 class="tit_tradu"> Tradução</h1>
+    <h1 class="tit_contato"> Duvidas?</h1>
+
+    <a href="https://moriyashrine.org/resources/touhou-8-eiyashou-imperishable-night.8/" target="_blank">  <img src="/img/baxar.png" alt="Ir para o download do touhou 8 "class="botos"></a>
     
 </body>
 </html>
