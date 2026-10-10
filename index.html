@@ -2,27 +2,50 @@
 <html lang="en">
 <head>
     <style>
+        @media(max-width: 700px)
+        {
+            body{ padding:12px;}
+            .cena{padding: 20px 0;}
+            .chuy_gran{width: 50%;}
+            .fala{margin-top: 10px;}
+            .fala .texto{ top: 12%; font-size: 12px; left: 12%; right: 12%;}
+        }
+       *{
+         box-sizing: border-box;
+        }
         @font-face {
             font-family: 'comfortaa';
             src: url(font/Comfortaa-Bold.ttf)  format('truetype');
         }
-        
+        .container
+        {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .chuy
+        {
+            display:flex ;
+            align-items: center;
+            gap:20px;
+            padding: 40px 20px;
+        }
         body
         {
             background-image: url(img/fundo.png);
             background-color: #f3a2ee;
-            background-repeat: repeat;
-            background-position:top-left;
-            background-attachment: scroll;
-            background-repeat: repeat;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
             position: relative;
             min-height: 100vh;
         }
         .tit_jogar
         {
-            position: absolute;
-            top: 1400px;
-            left: 100px;
+
+
+
             font-family: 'comfortaa' , sans-serif;
             color: #ffffff;
             font-size: 80px;
@@ -34,9 +57,6 @@
         }
         .tit_contato
         {
-            position: absolute;
-            top: 2400px;
-            left: 100px;
             font-family: 'comfortaa' , sans-serif;
             color: #ffffff;
             font-size: 80px;
@@ -48,9 +68,6 @@
         }
         .tit_tradu
         {
-            position: absolute;
-            top: 1800px;
-            left: 100px;
             font-family: 'comfortaa' , sans-serif;
             color: #ffffff;
             font-size: 80px;
@@ -60,55 +77,68 @@
             -2px 1px 0 hotpink,
             -2px -1px 0 hotpink;
         }
-        .balao
+       
+        .chuy_gran 
         {
-            position: absolute;
-            top: 250px;
-            left: 400px;
-            height: 250px;
-            width: 200;
-
+            position:static;
+            max-width: 400px;
+            height: auto;
+            width: 45%;
+            flex-shrink: 0;
         }
-        .chuy_gran
+        .fala
         {
-            position: absolute;
-            top : 250px;
-            left: 20px;
-            height: 800px;
-            width: 500px;
+            position: relative;
+            max-width: 350px;
+            flex: 1;
+            margin-top: -90px;
+            margin-left: -80px ;
         }
-        .texto
+         .fala .balao
+        {
+            position: static;
+            width: 100%;
+            z-index: 1;
+            display: block;
+            height: auto;
+        }
+        .cena
+        {
+            display: flex;
+            align-items: flex-start;
+            gap: 1px;
+            padding: 40px 0;
+        }
+        .fala .texto
         {
             position: absolute;
-            top: 275px;
-            left: 420px;
+            padding: 0;
             font-family: 'comfortaa' , sans-serif;
+            right: 15%;
+            left: 15%;
+            top: 15%;
             color: #ffffff;
-            font-size: 25px;
+            font-size: clamp(14px , 2.5vw, 26px);
             text-shadow:
             1px -0.5px 0 #53366b,
             1px 0.5px 0 #53366b,
             -1px 0.5px 0 #53366b,
             -1px -0.5px 0 #53366b;
-            z-index: 1;
+            z-index: 2;
 
         }
         .fofo
         {
-            position: absolute;
-            width: 150px;
-            height: px;
-            left: 400px;
-            top: 700px;
+            max-width: 15%;
+            position: static;
+            width: 15%;
+            height: auto;
             border-radius: 25px;
             border:7px ridge #f3a2ee;
             box-shadow: 8px 8px 10px #25182F  ;
         }
         .titulo
         {   
-            position: absolute;
-            top: 20px;
-            left: 100px;
             font-family: 'comfortaa' , sans-serif;
             color: #ffffff;
             font-size: 80px;
@@ -118,14 +148,16 @@
             -2px 1px 0 hotpink,
             -2px -1px 0 hotpink;
         }
-        .botos
+        .botos, .botos_tr, .botos_zp
         {
+        margin: 20px auto;
+            transition: transform 0.2s; 
+            position: static;
             width: 150px;
             height: 150px;
-            transition: transform 0.2s; 
-            position: absolute;
-            top: 1600px;
-            left: 270px;
+            display: block;
+            
+            
             
         }
         .botos:active
@@ -137,9 +169,6 @@
              width: 250px;
             height: 350px;
             transition: transform 0.2s; 
-            position: absolute;
-            top: 1980px;
-            left: 270px;
         }
         .botos_tr:active
         {
@@ -150,36 +179,59 @@
             width: 250px;
             height: 350px;
             transition: transform 0.2s; 
-            position: absolute;
-            top: 2600px;
-            left: 270px;
         }
         .botos_zp:active
         {
             transform: scale(0.4);
         }
-        
+        img
+        {
+            max-width:100%;
+            height: auto;
+            display: block;
+        }
+        h1,h2,h3
+        {
+            font-size: clamp(28px,5vw,60px);
+            line-height: 1.2;
+        }
+    
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dica</title>
 </head>
 <body>
-    <h3 class="texto">minhas maiores <br> fãs jogam Touhou 8 <br> ate a fase 6B</s>
-    </h3>
-    <img class="fofo" src="img/chuuya-soukoku.gif"> <img/>
-    <img class="balao " src="img/balaochuya.png"><img/>
-    <h1 class="titulo">Você sabia? </h1>
-    <img class="chuy_gran" src="img/s-l1600-339311506.png"> <img/>
-    <h1 class="tit_jogar"> Instalar </h1>
-    <h4 class="tit_jogar"style= "font-size: 30px; left: 80px; top: 1500px;">Instalar touhou 8 no seu computador </h4>
-    <h1 class="tit_tradu"> Tradução</h1>
-    <h4 class="tit_tradu" style="font-size: 30px; left: 80px; top: 1900px;">Download do tradutor <br> CLIQUE NO BOTÃO GRANDE<br> "DOWNLOAD" </h4>
-    <h1 class="tit_contato"> Duvidas?</h1>
-    <h4 class="tit_contato" style="font-size: 30px; left: 80px; top: 2500px;">O  Maior viciado em touhou<br> de todo ifpr!</h4>
+    <div class="container">
+        <h1 class="titulo">Você sabia? </h1>
+    <div class="cena">
+         <img class="chuy_gran" src="img/s-l1600-339311506.png"> 
+        <div class="fala">
 
-    <a href="https://moriyashrine.org/resources/touhou-8-eiyashou-imperishable-night.8/" target="_blank">  <img src="/img/baxar.png" alt="Ir para o download do touhou 8 "class="botos"></a>
-     <a href="https://wa.me/5541991316978" target="_blank">  <img src="/img/the_info.png" alt="Contato no whatsapp"class="botos_zp"></a>
-    <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download" target="_blank"> <img src="/img/translat.png" alt = "botao para ir para o download do tradutor" class="botos_tr"></a>
+    <img class="balao" src="img/balaochuya.png">
+    <h3 class="texto">minhas maiores <br> fãs jogam touhou 8 <br> ate a fase 6b</h3> 
+    
+    </div>
+ 
+    </div>
+     
+      <img class="fofo" src="img/chuuya-soukoku.gif"> 
+      <img class="fofo " src="img/chuuya-pig.gif">
+   
+    <h1 class="tit_jogar"> Instalar </h1>
+    <h4 class="tit_jogar"style= "font-size: 30px; ">Instalar touhou 8 no seu computador </h4>
+    <a href="https://moriyashrine.org/resources/touhou-8-eiyashou-imperishable-night.8/" target="_blank">  <img src="img/baxar.png" alt="Ir para o download do touhou 8 "class="botos"></a>
+    <h1 class="tit_tradu"> Tradução</h1>
+    <h4 class="tit_tradu" style="font-size: 30px; ">Download do tradutor <br> CLIQUE NO BOTÃO GRANDE<br> "DOWNLOAD" </h4>
+    <a href="https://www.thpatch.net/wiki/Touhou_Patch_Center:Download" target="_blank"> <img src="img/translat.png" alt = "botao para ir para o download do tradutor" class="botos_tr"></a>
+    <h1 class="tit_contato"> Duvidas?</h1>
+    <h4 class="tit_contato" style="font-size: 30px;">O  Maior viciado em touhou<br> de todo ifpr!</h4>
+      <a href="https://wa.me/5541991316978" target="_blank">  <img src="img/the_info.png" alt="Contato no whatsapp"class="botos_zp"></a>
+    
+   
+    
+     
+</div>
 </body>
+
 </html>
